@@ -1,0 +1,49 @@
+body {
+  margin:0;
+  padding:0;
+  background-color:#f7f9fc;
+  color:#222;
+  font-family:'DM Sans', sans-serif;
+  line-height:1.4;
+}
+
+h1,h2,h3,h4,h5 { 
+  font-family:'Zalando Sans Expanded', sans-serif;
+  font-weight:700;
+  color:#2d3a4b;
+}
+
+p,li,span { font-family:'DM Sans', sans-serif; font-weight:400; }
+button,a { font-family:'DM Sans', sans-serif; font-weight:500; }
+
+.card { transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform:scale(1.03); box-shadow:0 6px 16px rgba(0,0,0,0.15); }
+
+/* Example usage of Zalando Sans Expanded */
+.zalando-sans-expanded-200 {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.zalando-sans-expanded-400 {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.zalando-sans-expanded-700 {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.zalando-sans-expanded-900 {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
