@@ -1,0 +1,18 @@
+{
+  "Gujarat": {
+    "Ahmedabad": ["Daskroi", "Sanand", "Bavla"],
+    "Rajkot": ["Gondal", "Jasdan"]
+  },
+  "Maharashtra": {
+    "Pune": ["Mulshi", "Haveli"],
+    "Nagpur": ["Hingna", "Kalmeshwar"]
+  },
+  "Rajasthan": {
+    "Jaipur": ["Sanganer", "Amber"],
+    "Jodhpur": ["Osian", "Luni"]
+  },
+  "Tamil Nadu": {
+    "Coimbatore": ["Pollachi", "Sulur"],
+    "Madurai": ["Tirumangalam"]
+  }
+}

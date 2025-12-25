@@ -1,49 +1,265 @@
 body {
-  margin:0;
-  padding:0;
-  background-color:#f7f9fc;
-  color:#222;
-  font-family:'DM Sans', sans-serif;
-  line-height:1.4;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc;
+  color: #222;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.4;
 }
 
-h1,h2,h3,h4,h5 { 
-  font-family:'Zalando Sans Expanded', sans-serif;
-  font-weight:700;
-  color:#2d3a4b;
-}
-
-p,li,span { font-family:'DM Sans', sans-serif; font-weight:400; }
-button,a { font-family:'DM Sans', sans-serif; font-weight:500; }
-
-.card { transition:transform 0.3s ease, box-shadow 0.3s ease; }
-.card:hover { transform:scale(1.03); box-shadow:0 6px 16px rgba(0,0,0,0.15); }
-
-/* Example usage of Zalando Sans Expanded */
-.zalando-sans-expanded-200 {
-  font-family: "Zalando Sans Expanded", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  font-optical-sizing: auto;
-}
-
-.zalando-sans-expanded-400 {
-  font-family: "Zalando Sans Expanded", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-optical-sizing: auto;
-}
-
-.zalando-sans-expanded-700 {
-  font-family: "Zalando Sans Expanded", sans-serif;
+h1, h2, h3, h4, h5 { 
+  font-family: 'Zalando Sans Expanded', sans-serif;
   font-weight: 700;
-  font-style: normal;
-  font-optical-sizing: auto;
+  color: #2d3a4b;
 }
 
-.zalando-sans-expanded-900 {
-  font-family: "Zalando Sans Expanded", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  font-optical-sizing: auto;
+p, li, span { font-family: 'DM Sans', sans-serif; font-weight: 400; }
+button, a { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+
+/* Crop Advisor styling */
+.crop-advisor-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f4f8;
+  padding: 20px;
+}
+
+.title {
+  color: #0c0451;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.query-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.query-buttons button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e5e7eb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.query-buttons button.active,
+.query-buttons button:hover {
+  background-color: #4133e0;
+  color: white;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  max-width: 500px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #27c387;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ Stylish AI Response Box like “Recommended Crops” */
+.response-box {
+  margin-top: 30px;
+  background-color: #f9fefb;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #22c55e;
+  padding: 24px;
+  border-radius: 16px;
+  width: 40%;
+  max-width: 520px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  white-space: pre-line;
+}
+
+.response-box h3 {
+  font-family: 'Zalando Sans Expanded', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #14532d;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.response-box p {
+  font-size: 1rem;
+  color: #064e3b;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.response-box::before {
+  content: "🌾 Recommended Crops";
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #065f46;
+  background-color: #ecfdf5;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  text-align: center;
+  border: 1px solid #bbf7d0;
+}
+
+@media (max-width: 768px) {
+  .input-container,
+  .response-box {
+    width: 85%;
+  }
+}
+
+/* Home Page Styling */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 30px 40px;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  font-family: 'Zalando Sans Expanded', sans-serif;
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+/* ==== AI Response Grid (Crop Cards) ==== */
+.response-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.response-card {
+  background: #f9fefb;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #22c55e;
+  border-radius: 16px;
+  width: 260px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.response-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.response-card h3 {
+  color: #14532d;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.response-card p {
+  color: #064e3b;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.tip-card {
+  background: #ecfdf5;
+  border-left: 5px solid #16a34a;
+}
+.crop-card {
+  width: 35%;
+  background-color: #DFF7E1;
+  border-radius: 20px 10px 10px 20px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #174d1a;
+  box-shadow: inset 4px 0 0 #2ecc71, 0 3px 6px rgba(0, 0, 0, 0.08);
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.crop-card:hover {
+  transform: scale(1.02);
+}
+@media (max-width: 768px) {
+  .crop-card {
+    width: 70%;
+  }
 }

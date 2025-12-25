@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import MapView from "../components/MapView";
+import MapView from "../components/MapView"; // marker-based map
+import DataPanel from "../components/DataPanel"; // keeps working
+import stateData from "../data/stateData";     // same data
 
-function Dashboard() {
-  const [region, setRegion] = useState("All");
+const Dashboard = () => {
+  const [selectedState, setSelectedState] = useState(null);
+
+  const handleStateClick = (stateName) => {
+    setSelectedState(stateName);
+  };
 
   return (
-    <div style={{ padding:'2rem' }}>
-      <h2>Satellite Data Dashboard</h2>
-      <p>Select a region to view simulated satellite data.</p>
-      <select value={region} onChange={(e)=>setRegion(e.target.value)} style={{ marginBottom:'1rem' }}>
-        <option value="All">All</option>
-        <option value="Punjab">Punjab</option>
-        <option value="Haryana">Haryana</option>
-        <option value="Uttar Pradesh">Uttar Pradesh</option>
-        <option value="Maharashtra">Maharashtra</option>
-      </select>
-      <div style={{ display:'flex', gap:'2rem', flexWrap:'wrap' }}>
-        <MapView region={region} />
-      </div>
+    <div className="p-6">
+      <h2 className="zalando-sans-expanded-700 text-2xl mb-4">
+            ISRO Agriculture Dashboard</h2>
+      <MapView onStateClick={handleStateClick} />
+      <DataPanel selectedState={selectedState} data={stateData} />
     </div>
   );
-}
+};
 
 export default Dashboard;
